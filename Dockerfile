@@ -15,7 +15,7 @@ ENV HADOOP_CONF_DIR  /usr/local/hadoop-${HADOOP_VERSION}/etc/hadoop
 
 USER root
 # Add proper open-jdk-8 not just the jre, needed for pydoop
-RUN gpg --keyserver pgpkeys.mit.edu --recv-key  8B48AD6246925553 && gpg -a --export 8B48AD6246925553 | apt-key add -
+#RUN gpg --keyserver pgpkeys.mit.edu --recv-key  8B48AD6246925553 && gpg -a --export 8B48AD6246925553 | apt-key add -
 RUN echo 'deb http://cdn-fastly.deb.debian.org/debian jessie-backports main' > /etc/apt/sources.list.d/jessie-backports.list && \
     apt-get -y update && \
     apt-get install --no-install-recommends -t jessie-backports -y libjpeg62-turbo openjdk-8-jre-headless ca-certificates-java  && \
